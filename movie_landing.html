@@ -36,8 +36,8 @@
     <!-- --------------- Header Content ---------------- -->
     <div id="landing_image" class="box">
       <h1 id="landing_title">SPARTAN</h1>
-      <p><span>Disclaimer: this is not Netflix. This is for practice.</span></p>
-      <p>
+      <!-- <p><span>Disclaimer: this is not Netflix. This is for practice.</span></p> -->
+      <p id="landing_desc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nihil
         dolore alias nesciunt nisi ratione dolorum aspernatur quam. Beatae sequi
         cum eos odit laudantium omnis sunt rerum quia illum dolorum.
@@ -127,6 +127,8 @@
   get_title.textContent = test_movie["title"]
   console.log("Title is = ")
   console.log(get_title)
-
+  
+  let get_desc = document.getElementById("landing_desc")
+  get_desc.textContent = test_movie["overview"]
   </script>
 </html>
