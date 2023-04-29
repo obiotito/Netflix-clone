@@ -34,8 +34,8 @@
       </nav>
     </div>
     <!-- --------------- Header Content ---------------- -->
-    <div class="box">
-      <h1>SPARTAN</h1>
+    <div id="landing_image" class="box">
+      <h1 id="landing_title">SPARTAN</h1>
       <p><span>Disclaimer: this is not Netflix. This is for practice.</span></p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nihil
@@ -93,4 +93,40 @@
       <div class="download"></div>
     </div>
   </body>
+
+  <script>
+    let test_movie = {
+            "adult": false,
+            "backdrop_path": "/b9UCfDzwiWw7mIFsIQR9ZJUeh7q.jpg",
+            "id": 868759,
+            "title": "Ghosted",
+            "original_language": "en",
+            "original_title": "Ghosted",
+            "overview": "Salt-of-the-earth Cole falls head over heels for enigmatic Sadie — but then makes the shocking discovery that she’s a secret agent. Before they can decide on a second date, Cole and Sadie are swept away on an international adventure to save the world.",
+            "poster_path": "/liLN69YgoovHVgmlHJ876PKi5Yi.jpg",
+            "media_type": "movie",
+            "genre_ids": [
+                10749,
+                28,
+                35
+            ],
+            "popularity": 1214.867,
+            "release_date": "2023-04-21",
+            "video": false,
+            "vote_average": 7.28,
+            "vote_count": 412
+        }
+
+
+  const movie_url = "https://image.tmdb.org/t/p/original/"
+
+  let fullpath = movie_url + test_movie["poster_path"]
+  
+
+  let get_title = document.getElementById("landing_title")
+  get_title.textContent = test_movie["title"]
+  console.log("Title is = ")
+  console.log(get_title)
+
+  </script>
 </html>

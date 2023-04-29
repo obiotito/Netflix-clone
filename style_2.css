@@ -54,8 +54,10 @@ nav a:hover{
 .box{
   width: 90%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(images/header-image.png);
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(https://image.tmdb.org/t/p/original/b9UCfDzwiWw7mIFsIQR9ZJUeh7q.jpg);
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 50px;
   z-index: -1;
   padding-top: 300px;
