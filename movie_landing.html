@@ -54,19 +54,10 @@
     </div>
     <!-- ------------ Section -------------- -->
     <div class="sections">
-      <section class="part1">
-        <h2>Continue Watching</h2>
-        <img src="images/feature-1.png" alt="" />
-        <img src="images/feature-2.png" alt="" />
-        <img src="images/feature-3.png" alt="" />
-        <img src="images/feature-4.png" alt="" />
-      </section>
       <section class="part2">
         <h2>Trending Now</h2>
-        <img src="images/feature-1.png" alt="" />
-        <img src="images/feature-2.png" alt="" />
-        <img src="images/feature-3.png" alt="" />
-        <img src="images/feature-4.png" alt="" />
+        <div id="trendingnow"></div>
+        
       </section>
       <section class="part3">
         <h2>Top picks for you</h2>
@@ -130,5 +121,30 @@
   
   let get_desc = document.getElementById("landing_desc")
   get_desc.textContent = test_movie["overview"]
+
+  // API PART
+  const API_URL = "https://api.themoviedb.org/3/trending/movie/week?api_key="
+  const API_KEY = "448dc0412a09448400b83bbd89a3f281"
+
+  let full_api_path = API_URL + API_KEY
+
+  
+
+  fetch(full_api_path) // CONFIRMING THE API EXISTS
+  .then((response) => { // IF IT EXISTS A RESPONSE WILL COME
+    return response.json() // IN THAT RESPONSE A JSON FILE WILL BE THERE THAT CONTAINS THE DATA
+  }).then((data) => { // WE MANIPULATE THAT DATA TO OUR LIKING
+
+    let trending_now_data = data["results"].slice(0, 3) // WE LIMIT THE RESULTS TO THE FIRST 3
+    let trending_div = document.getElementById("trendingnow") // WE GET THE DIV WITH THE ID TO DISPLAY TRENDING NOW
+    
+    for (let i = 0; i < trending_now_data.length; i++) { // WE LOOP THROUGH THE ARRAY
+      var img = document.createElement('img'); // WE CREATE AN IMAGE ELEMENT
+            img.src = movie_url + trending_now_data[i]["backdrop_path"]; // WE ADD THE SOURCE OF THE IMAGE TO BE EQUALS TO THE BACKDROP PATH
+            trending_div.appendChild(img); // WE FINALLY APPEND THE NEWLY CREATED IMAGE TO THE DIV
+      }
+    
+  })
+
   </script>
 </html>
